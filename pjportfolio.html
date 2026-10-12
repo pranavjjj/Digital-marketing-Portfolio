@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranav Jadhav | Digital Marketing Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome Icons for aesthetics -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #FBF5F4;
+            --coral: #FF4F4F;
+            --coral-glow: rgba(255, 79, 79, 0.15);
+            --charcoal: #1A1A1A;
+            --card-bg: #FFFFFF;
+            --card-inner: #F6EEEE;
+            --text-muted: #555555;
+            --border-color: #E8D7D5;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --shadow-sm: 0 4px 15px rgba(26, 26, 26, 0.04);
+            --shadow-md: 0 10px 30px rgba(26, 26, 26, 0.08);
+            --shadow-lg: 0 20px 40px rgba(255, 79, 79, 0.12);
+            --green: #10B981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--charcoal);
+            padding: 2.5rem 1rem;
+            line-height: 1.6;
+            overflow-x: hidden;
+            /* Crucial for preventing horizontal scroll */
+            -webkit-font-smoothing: antialiased;
+            width: 100%;
+        }
+
+        .page-wrapper {
+            max-width: 1150px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* HEADER SECTION */
+        .main-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .candidate-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 79, 79, 0.08);
+            color: var(--coral);
+            border: 1px solid rgba(255, 79, 79, 0.25);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 10px rgba(255, 79, 79, 0.05);
+            backdrop-filter: blur(8px);
+        }
+
+        .candidate-badge i {
+            font-size: 0.75rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .main-header h1 {
+            font-size: clamp(2.5rem, 7vw, 4.8rem);
+            font-weight: 900;
+            color: var(--charcoal);
+            letter-spacing: -1.5px;
+            line-height: 1.05;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            word-break: break-word;
+        }
+
+        .main-header h1 span {
+            color: var(--coral);
+            display: inline-block;
+        }
+
+        /* CONTACT GRID */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .contact-card-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            overflow: hidden;
+        }
+
+        .contact-card-icon {
+            width: 42px;
+            height: 42px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            background: var(--card-inner);
+            color: var(--coral);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--coral);
+            background: #FFFFFF;
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-card:hover .contact-card-icon {
+            background: var(--coral);
+            color: #FFFFFF;
+        }
+
+        .contact-card .arrow-icon {
+            color: var(--border-color);
+            transition: transform 0.3s ease, color 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .contact-card:hover .arrow-icon {
+            color: var(--coral);
+            transform: translateX(4px);
+        }
+
+        /* SECTION TITLES */
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+            font-weight: 900;
+            color: var(--coral);
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .section-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-top: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* NETFLIX MARQUEE CAROUSEL (Mobile Safe) */
+        .netflix-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 4.5rem;
+            padding: 1.2rem 0;
+            background: linear-gradient(180deg, rgba(246, 238, 238, 0.4) 0%, rgba(251, 245, 244, 0) 100%);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .netflix-container::before,
+        .netflix-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 60px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .netflix-container::before {
+            left: 0;
+            background: linear-gradient(to right, var(--bg-color), transparent);
+        }
+
+        .netflix-container::after {
+            right: 0;
+            background: linear-gradient(to left, var(--bg-color), transparent);
+        }
+
+        .netflix-track {
+            display: flex;
+            gap: 1.2rem;
+            width: max-content;
+            animation: scrollMarquee 25s linear infinite;
+        }
+
+        .netflix-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollMarquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .netflix-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 1.2rem 1.8rem;
+            min-width: 230px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--charcoal);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .netflix-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--coral);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .netflix-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: var(--coral);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .netflix-card:hover::before {
+            opacity: 1;
+        }
+
+        .netflix-card .icon-wrap {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--card-inner);
+            color: var(--coral);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 2px;
+        }
+
+        .netflix-card .title {
+            font-weight: 800;
+            font-size: 1.05rem;
+            color: var(--charcoal);
+        }
+
+        .netflix-card .subtitle {
+            font-size: 0.7rem;
+            color: var(--coral);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* PROFESSIONAL PILLAR CASE STUDY SECTIONS */
+        .pillar-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            scroll-margin-top: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: rgba(255, 79, 79, 0.3);
+        }
+
+        .pillar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .pillar-header h3 {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--charcoal);
+        }
+
+        .pillar-badge {
+            background: var(--coral);
+            color: white;
+            padding: 0.3rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .pillar-desc p {
+            margin-bottom: 1rem;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        .pillar-desc ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .pillar-desc li {
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
+            color: var(--charcoal);
+            font-weight: 700;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .pillar-desc li i {
+            color: var(--coral);
+            font-size: 0.85rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        /* Metric Dashboard Callout Box */
+        .metrics-callout {
+            background: var(--card-inner);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            text-align: center;
+        }
+
+        .metric-item h4 {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--coral);
+        }
+
+        .metric-item span {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        /* Mockup Containers */
+        .mockup-container {
+            background: #0F172A;
+            border-radius: 14px;
+            padding: 1rem;
+            color: #F8FAFC;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            font-family: monospace;
+            overflow-x: auto;
+            border: 1px solid #334155;
+            max-width: 100%;
+        }
+
+        .mockup-header {
+            font-size: 0.7rem;
+            color: #94A3B8;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 0.4rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            gap: 10px;
+        }
+
+        /* Table Styles for Data Samples */
+        .mock-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.75rem;
+            white-space: nowrap;
+        }
+
+        .mock-table th,
+        .mock-table td {
+            padding: 0.5rem 0.4rem;
+            text-align: left;
+            border-bottom: 1px solid #1E293B;
+        }
+
+        .mock-table th {
+            color: #38BDF8;
+            font-weight: 700;
+        }
+
+        .green-text {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        /* TARGET SCROLL MARGIN */
+        .target-section {
+            scroll-margin-top: 1.5rem;
+        }
+
+        /* FOOTER */
+        .footer-bar {
+            text-align: center;
+            border-top: 2px solid var(--border-color);
+            padding-top: 2rem;
+            margin-top: 4rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-bar span {
+            color: var(--coral);
+        }
+
+        /* MEDIA QUERIES FOR FULL MOBILE RESPONSIVENESS */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .pillar-card {
+                padding: 1.25rem;
+            }
+
+            .pillar-header h3 {
+                font-size: 1.25rem;
+            }
+
+            .metrics-callout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+        <!-- Main Header -->
+        <header class="main-header">
+            <div class="candidate-badge">
+                <i class="fa-solid fa-circle"></i> Your Next Potential Candidate
+            </div>
+            <h1>Pranav <span>Jadhav</span></h1>
+        </header>
+
+        <!-- Clickable Interactive Contact Grid -->
+        <div class="contact-grid">
+            <a href="https://linkedin.com/in/pranavjadhav12" target="_blank" rel="noopener" class="contact-card">
+                <div class="contact-card-info">
+                    <div class="contact-card-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <div style="overflow: hidden; text-overflow: ellipsis;">
+                        <div style="font-size: 0.7rem; color: var(--text-muted); font-weight: 600;">LINKEDIN</div>
+                        <div style="font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            Pranav Jadhav</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+            </a>
+
+            <a href="mailto:pranavjadhav0690@gmail.com" class="contact-card">
+                <div class="contact-card-info">
+                    <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div style="overflow: hidden; text-overflow: ellipsis;">
+                        <div style="font-size: 0.7rem; color: var(--text-muted); font-weight: 600;">EMAIL</div>
+                        <div style="font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            pranavjadhav0690@gmail.com</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-right arrow-icon"></i>
+            </a>
+        </div>
+
+        <!-- Section Title -->
+        <div class="section-header">
+            <h2 class="section-title">Digital Marketing Portfolio</h2>
+            <div class="section-subtitle">Click any skill below to jump to proof-of-work section</div>
+        </div>
+
+        <!-- Netflix-Style Infinite Auto-Scrolling Skill Marquee (Mobile Safe) -->
+        <div class="netflix-container">
+            <div class="netflix-track">
+                <!-- SET 1 -->
+                <a href="#paid-ads" class="netflix-card">
+                    <div class="icon-wrap"><i class="fa-solid fa-bullseye"></i></div>
+                    <div class="title">1. Paid Ads (PPC)</div>
+                    <div class="subtitle">View Section <i class="fa-solid fa-arrow-down"></i></div>
+                </a>
+                <a href="#social-growth" class="netflix-card">
+                    <div class="icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="title">2. Social Growth</div>
+                    <div class="subtitle">View Section <i class="fa-solid fa-arrow-down"></i></div>
+                </a>
+                <a href="#copywriting" class="netflix-card">
+                    <div class="icon-wrap"><i class="fa-solid fa-pen-nib"></i></div>
+                    <div class="title">3. Copywriting</div>
+                    <div class="subtitle">View Section <i class="fa-solid fa-arrow-down"></i></div>
+                </a>
+                <a href="#seo-ops" class="netflix-card">
+                    <div class="icon-wrap"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div class="title">4. SEO & Audits</div>
+                    <div class="subtitle">View Section <i class="fa-solid fa-arrow-down"></i></div>
+                </a>
+                <a href="#creative-workflow" class="netflix-card">
+                    <div class="icon-wrap"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <div class="title">5. Creative Stack</div>
+                    <div class="subtitle">View Section <i class="fa-solid fa-arrow-down"></i></div>
+                </a>
+
+                <!-- SET 2 (Duplicate for smooth infinite marquee loop) -->
+                <a href="#paid-ads" class="netflix-card">
+                    <div class="icon-wrap"><i class="fa-solid fa-bullseye"></i></div>
+                    <div class="title">1. Paid Ads (PPC)</div>
+                    <div class="subtitle">View Section <i class="fa-solid fa-arrow-down"></i></div>
+                </a>
+                <a href="#social-growth" class="netflix-card">
+                    <div class="icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="title">2. Social Growth</div>
+                    <div class="subtitle">View Section <i class="fa-solid fa-arrow-down"></i></div>
+                </a>
+                <a href="#copywriting" class="netflix-card">
+                    <div class="icon-wrap"><i class="fa-solid fa-pen-nib"></i></div>
+                    <div class="title">3. Copywriting</div>
+                    <div class="subtitle">View Section <i class="fa-solid fa-arrow-down"></i></div>
+                </a>
+                <a href="#seo-ops" class="netflix-card">
+                    <div class="icon-wrap"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div class="title">4. SEO & Audits</div>
+                    <div class="subtitle">View Section <i class="fa-solid fa-arrow-down"></i></div>
+                </a>
+                <a href="#creative-workflow" class="netflix-card">
+                    <div class="icon-wrap"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <div class="title">5. Creative Stack</div>
+                    <div class="subtitle">View Section <i class="fa-solid fa-arrow-down"></i></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- PROFESSIONAL PORTFOLIO PROOF-OF-WORK SECTIONS -->
+
+        <!-- Pillar 1: Paid Ads (PPC) -->
+        <div id="paid-ads" class="pillar-card target-section">
+            <div class="pillar-header">
+                <h3>1. Paid Ads & Performance Marketing</h3>
+                <span class="pillar-badge">Meta & Google Ads</span>
+            </div>
+            <div class="pillar-grid">
+                <div class="pillar-desc">
+                    <p>Engineered and optimized lower-funnel performance campaigns across Meta Ads Manager and Google
+                        Ads. Applied structured bidding strategies (CBO & Manual CPC) to drive cost-effective
+                        conversions.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Lowered Cost Per Lead (CPL) by 25% via creative
+                            testing.</li>
+                        <li><i class="fa-solid fa-check"></i> Improved Click-Through Rate (CTR) from 1.2% to 2.1%.</li>
+                        <li><i class="fa-solid fa-check"></i> Conversion tracking configured with GA4, GTM, and Meta
+                            Pixel.</li>
+                    </ul>
+                    <div class="metrics-callout">
+                        <div class="metric-item">
+                            <h4>-25%</h4>
+                            <span>CPL Drop</span>
+                        </div>
+                        <div class="metric-item">
+                            <h4>2.1%</h4>
+                            <span>Avg CTR</span>
+                        </div>
+                        <div class="metric-item">
+                            <h4>3.4x</h4>
+                            <span>Target ROAS</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mockup Dashboard Table -->
+                <div class="mockup-container">
+                    <div class="mockup-header">
+                        <span>📊 Meta Ads Log</span>
+                        <span>LIVE</span>
+                    </div>
+                    <table class="mock-table">
+                        <thead>
+                            <tr>
+                                <th>Campaign</th>
+                                <th>Spend</th>
+                                <th>CTR</th>
+                                <th>CPL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LeadGen_CBO</td>
+                                <td>₹12.4K</td>
+                                <td class="green-text">2.4%</td>
+                                <td class="green-text">₹85</td>
+                            </tr>
+                            <tr>
+                                <td>Broad_Test</td>
+                                <td>₹8.2K</td>
+                                <td>1.8%</td>
+                                <td>₹110</td>
+                            </tr>
+                            <tr>
+                                <td>Lookalike_1%</td>
+                                <td>₹15.0K</td>
+                                <td class="green-text">2.1%</td>
+                                <td class="green-text">₹92</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pillar 2: Social Media Management -->
+        <div id="social-growth" class="pillar-card target-section">
+            <div class="pillar-header">
+                <h3>2. Social Media Management & Growth</h3>
+                <span class="pillar-badge">30-Day Strategy</span>
+            </div>
+            <div class="pillar-grid">
+                <div class="pillar-desc">
+                    <p>Built end-to-end organic growth systems utilizing structured 30-day editorial content calendars
+                        and high-retention short-form video assets (Reels/Shorts).</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> 30-Day Editorial Content Calendar managed in
+                            Notion/Excel.</li>
+                        <li><i class="fa-solid fa-check"></i> Short-form Reels scripted and edited with CapCut
+                            hooks.</li>
+                        <li><i class="fa-solid fa-check"></i> Achieved +40% increase in organic reach over 30 days.</li>
+                    </ul>
+                    <div class="metrics-callout" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="metric-item">
+                            <h4>+40%</h4>
+                            <span>Organic Reach</span>
+                        </div>
+                        <div class="metric-item">
+                            <h4>20+</h4>
+                            <span>Posts / Month</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mockup Calendar Preview -->
+                <div class="mockup-container">
+                    <div class="mockup-header">
+                        <span>📅 Content Calendar</span>
+                        <span>NOTION</span>
+                    </div>
+                    <table class="mock-table">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Format</th>
+                                <th>Hook / Topic</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Day 01</td>
+                                <td>Reel</td>
+                                <td>"3 PPC Mistakes..."</td>
+                            </tr>
+                            <tr>
+                                <td>Day 03</td>
+                                <td>Carousel</td>
+                                <td>"Meta vs Google Ads"</td>
+                            </tr>
+                            <tr>
+                                <td>Day 05</td>
+                                <td>Static</td>
+                                <td>"25% CPL drop case"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pillar 3: Copywriting -->
+        <div id="copywriting" class="pillar-card target-section">
+            <div class="pillar-header">
+                <h3>3. Direct Response Copywriting</h3>
+                <span class="pillar-badge">Ads & Landing Pages</span>
+            </div>
+            <div class="pillar-grid">
+                <div class="pillar-desc">
+                    <p>Crafted persuasive ad copy, social media captions, and landing page headlines designed to stop
+                        the scroll and drive measurable action.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Primary Text, Headlines, and CTAs structured for Paid
+                            Ads.</li>
+                        <li><i class="fa-solid fa-check"></i> Hook-driven captions for Instagram & LinkedIn.
+                        </li>
+                        <li><i class="fa-solid fa-check"></i> A/B Tested headlines for landing page conversion
+                            boost.</li>
+                    </ul>
+                </div>
+                <!-- Mockup Copy Samples -->
+                <div class="mockup-container">
+                    <div class="mockup-header">
+                        <span>✍️ Ad Copy Sample</span>
+                        <span>A/B WINNER</span>
+                    </div>
+                    <p style="font-size: 0.8rem; color: #CBD5E1; margin-bottom: 0.5rem;"><strong>Headline:</strong>
+                        "Stop Wasting 40% of Your Meta Ad Spend Today."</p>
+                    <p style="font-size: 0.75rem; color: #94A3B8;"><strong>Primary Text:</strong> "Struggling with high
+                        Cost Per Lead? We audited 50+ ad accounts and found the #1 mistake marketers make with CBO..."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pillar 4: SEO & Web Ops -->
+        <div id="seo-ops" class="pillar-card target-section">
+            <div class="pillar-header">
+                <h3>4. SEO & Website Optimization</h3>
+                <span class="pillar-badge">On-Page & Audits</span>
+            </div>
+            <div class="pillar-grid">
+                <div class="pillar-desc">
+                    <p>Executed comprehensive keyword research and on-page optimization on WordPress CMS to elevate
+                        organic search visibility and user conversion rates.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> On-Page Meta Tag, Title, and Heading (H1, H2)
+                            updates.</li>
+                        <li><i class="fa-solid fa-check"></i> Keyword research using Google Keyword Planner.
+                        </li>
+                        <li><i class="fa-solid fa-check"></i> Website traffic trend monitoring via Google Search
+                            Console.</li>
+                    </ul>
+                </div>
+                <!-- Mockup Keyword Audit -->
+                <div class="mockup-container">
+                    <div class="mockup-header">
+                        <span>🔍 SEO Keyword Audit</span>
+                        <span>REPORT</span>
+                    </div>
+                    <table class="mock-table">
+                        <thead>
+                            <tr>
+                                <th>Keyword</th>
+                                <th>Vol</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>digital marketing</td>
+                                <td>12K</td>
+                                <td class="green-text">Optimized (H1)</td>
+                            </tr>
+                            <tr>
+                                <td>performance ads</td>
+                                <td>4.5K</td>
+                                <td class="green-text">Meta Updated</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pillar 5: Creative Workflow -->
+        <div id="creative-workflow" class="pillar-card target-section">
+            <div class="pillar-header">
+                <h3>5. Creative Workflow & Tech Stack</h3>
+                <span class="pillar-badge">Canva, Davinci-Resolve & CapCut</span>
+            </div>
+            <div class="pillar-grid">
+                <div class="pillar-desc">
+                    <p>Combined creative software with technical analytical tools to execute, track, and iterate
+                        performance assets across all digital touchpoints.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Canva: Carousel graphic design & ad creatives.</li>
+                        <li><i class="fa-solid fa-check"></i> CapCut: Short-form video Reels/Shorts editing.</li>
+                        <li><i class="fa-solid fa-check"></i> MS Excel: Pivot tables, performance dashboards & tracking.
+                        </li>
+                    </ul>
+                </div>
+                <div class="mockup-container"
+                    style="text-align: center; display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                    <div class="mockup-header" style="justify-content: center;">
+                        <span>🛠️ Active Technical Stack</span>
+                    </div>
+                    <p
+                        style="font-size: 0.75rem; color: #38BDF8; font-weight: 700; line-height: 1.8; margin-top: 0.25rem;">
+                        Meta Ads • GA4 • GTM • MS Excel • Canva Pro • CapCut Pro • WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-bar">
+            <p>&copy; 2026 <span>Pranav Jadhav</span>. Built for high-performance marketing impact.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
